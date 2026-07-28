@@ -6,5 +6,17 @@ Tech Stack
 - Spring Boot
 - PostgreSQL
 - Docker
-- JWT
-- Flyway
+- 
+## Planned features
+
+- JWT authentication
+
+## Database
+
+To run PostgreSQL database, you need to execute this command:
+
+`docker compose -f docker/docker-compose.yml up -d`
+
+if you need, or you want to stop it, run:
+
+`docker compose -f docker/docker-compose.yml down -v`
