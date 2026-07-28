@@ -1,13 +1,17 @@
 services:
   db:
     image: postgres:16-alpine
-    container_name: postgres_db
-    restart: always
+    container_name: event-tracking-db
+    restart: unless-stopped
+
     environment:
-      POSTGRES_PASSWORD: github-enriqueig-qwerty
-      POSTGRES_DB: event-tracker
+      POSTGRES_DB: ${POSTGRES_DB:-event_tracker}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
+
     volumes:
       - pgdata:/var/lib/postgresql/data
 

@@ -8,17 +8,17 @@ spring:
     name: event-tracking-api
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/event-tracker
-    username: postgres
-    password: github-enriqueig-qwerty
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/event_tracker}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: ${SHOW_SQL:false}
 
 logging:
   level:
     root: INFO
-    com.enriqueibarraig: DEBUG
+    com.enriqueibarraig: ${APP_LOG_LEVEL:INFO}
