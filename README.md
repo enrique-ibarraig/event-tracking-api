@@ -77,5 +77,5 @@ src/main/resources/db/migration
 ```
 Flyway executes pending migrations automatically when the application starts.
 
-Planned features
+## Planned features
 - JWT authentication
