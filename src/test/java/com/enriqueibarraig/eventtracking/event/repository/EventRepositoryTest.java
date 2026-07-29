@@ -19,7 +19,7 @@ public class EventRepositoryTest {
 
     @Test
     public void whenEventIsValid_thenCreateANewEvent() {
-        var entity = new Event("ISSUE 1", EventType.INFORMATION, "ISSUE TASK 1", OffsetDateTime.now());
+        var entity = new Event("ISSUE 1", "ISSUE TASK 1", EventType.INFORMATION, OffsetDateTime.now());
         var entitySaved = this.repository.save(entity);
 
         assertThat(entitySaved.getId()).isEqualTo(1L);

@@ -41,28 +41,28 @@ public class EventTest {
     @Test
     public void whenEventDescriptionIsNull_thenThrowError() {
         assertThatThrownBy(() -> {
-            var entity = new Event("ISSUE 1", EventType.INFORMATION, null, null);
+            var entity = new Event("ISSUE 1", null, EventType.INFORMATION, null);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     public void whenEventDescriptionIsBlank_thenThrowError() {
         assertThatThrownBy(() -> {
-            var entity = new Event("ISSUE 1", EventType.INFORMATION, "", null);
+            var entity = new Event("ISSUE 1",  "", EventType.INFORMATION, null);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     public void whenEventDescriptionIsMoreThan500_thenThrowError() {
         assertThatThrownBy(() -> {
-            var entity = new Event("ISSUE 1", EventType.INFORMATION, "The AssertJ library provides a fluent interface for writing assertions in Java unit tests. When testing code that should fail under certain conditions, developers use the assertThatThrownBy method. This allows them to cleanly capture an exception thrown by a lambda expression and then chain multiple verifications together. For example, you can check the exception class type, verify the exact error message, or inspect the underlying cause. It makes test suites much more readable and easier to maintain.", null);
+            var entity = new Event("ISSUE 1",  "The AssertJ library provides a fluent interface for writing assertions in Java unit tests. When testing code that should fail under certain conditions, developers use the assertThatThrownBy method. This allows them to cleanly capture an exception thrown by a lambda expression and then chain multiple verifications together. For example, you can check the exception class type, verify the exact error message, or inspect the underlying cause. It makes test suites much more readable and easier to maintain.", EventType.INFORMATION, null);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     public void whenEventOccurredIsNull_thenThrowError() {
         assertThatThrownBy(() -> {
-            var entity = new Event("ISSUE 1", EventType.INFORMATION, "ISSUE TASK 1", null);
+            var entity = new Event("ISSUE 1",  "ISSUE TASK 1", EventType.INFORMATION, null);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 

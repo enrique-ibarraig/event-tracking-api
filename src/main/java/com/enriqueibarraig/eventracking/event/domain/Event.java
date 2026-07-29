@@ -41,8 +41,8 @@ public class Event {
 
     public Event(
             String name,
-            EventType eventType,
             String description,
+            EventType eventType,
             OffsetDateTime occurredAt
     ) {
         if (Objects.isNull(name) || name.isBlank()) {
