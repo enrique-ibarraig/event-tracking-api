@@ -1,6 +1,5 @@
-package com.enriqueibarraig.event.entity;
+package com.enriqueibarraig.eventracking.event.domain;
 
-import com.enriqueibarraig.event.domain.EventType;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -9,7 +8,7 @@ import java.util.Objects;
 
 @Entity()
 @Table(name = "events")
-public class EventEntity {
+public class Event {
 
     @Getter
     @Id
@@ -17,25 +16,30 @@ public class EventEntity {
     @Column(name = "id")
     private Long id;
 
+    @Getter
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
+    @Getter
     @Column(name = "description", length = 500)
     private String description;
 
+    @Getter
     @Enumerated(EnumType.STRING)
     @Column(name = "event_type", nullable = false, length = 50)
     private EventType eventType;
 
+    @Getter
     @Column(name = "occurred_at", nullable = false)
     private OffsetDateTime occurredAt;
 
+    @Getter
     @Column(name = "created_at", insertable = false, nullable = false, updatable = false)
     private OffsetDateTime createdAt;
 
-    protected EventEntity() {}
+    protected Event() {}
 
-    public EventEntity(
+    public Event(
             String name,
             EventType eventType,
             String description,

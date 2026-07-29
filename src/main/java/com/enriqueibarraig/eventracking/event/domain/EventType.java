@@ -1,4 +1,4 @@
-package com.enriqueibarraig.event.domain;
+package com.enriqueibarraig.eventracking.event.domain;
 
 public enum EventType {
     INFORMATION,
